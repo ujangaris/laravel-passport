@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -26,5 +27,32 @@ class AuthController extends Controller
         ], 201);
     }
 
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $credentials = request(['email','password']);
+
+        if(!Auth::attempt($credentials))
+        return response()->json([
+            'message' => 'Unauthorized',
+        ], 401);
+
+        $user = $request->user();
+
+        $tokenResult = $user->createToken('Access TOken');
+        $token = $tokenResult->token;
+
+        $token->save();
+
+        return response()->json([
+            'token' => $tokenResult->accessToken,
+            'token_type' => 'Bearer',
+            'message' => 'Login berhasil!',
+        ],201);
+    }
 
 }
