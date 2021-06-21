@@ -44,5 +44,5 @@ class User extends Authenticatable
 9. php artisan make:controller AuthController
 
 
-
+- untuk logout copy token generate hasil login dan paste setelah Bearer
 
