@@ -26,3 +26,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 # Login
 ![WhatsApp Image 2021-06-21 at 22 25 18](https://user-images.githubusercontent.com/23657902/122787636-b9b32f00-d2df-11eb-8f2e-6b671b06659f.jpeg)
+
+# Logout
+![WhatsApp Image 2021-06-21 at 22 45 38](https://user-images.githubusercontent.com/23657902/122790565-a2297580-d2e2-11eb-8fe0-f3245e9c38d7.jpeg)
